@@ -543,6 +543,60 @@ order: 4
         margin-right: auto;
     }
 
+    /* Video Embedding */
+    .projects-portfolio .featured-video {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .projects-portfolio .video-caption {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .projects-portfolio .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .projects-portfolio .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Project Card Video */
+    .projects-portfolio .project-video {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects-portfolio .project-video .video-caption {
+        color: var(--text-medium);
+        font-size: 0.8125rem;
+        margin-bottom: 10px;
+    }
+
+    .projects-portfolio .project-video .video-wrapper {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
         .projects-portfolio {
@@ -587,12 +641,25 @@ order: 4
         .projects-portfolio .project-links {
             flex-direction: column;
         }
+
+        .projects-portfolio .featured-video {
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+        }
+
+        .projects-portfolio .video-wrapper {
+            border-radius: 0;
+        }
     }
 </style>
 
 <div class="projects-portfolio">
     <div class="portfolio-header">
-
+        <div class="breadcrumb">
+            <a href="{{ site.baseurl }}/">Home</a>
+            <span>/</span>
+            <span>Projects</span>
+        </div>
         <h1>Research & Development Projects</h1>
         <p class="page-description">A comprehensive portfolio of research, applied systems, and future concepts bridging construction engineering and artificial intelligence.</p>
     </div>
@@ -646,10 +713,28 @@ order: 4
             <span class="featured-tag">BIM Integration</span>
         </div>
 
+        <!-- Video Demo -->
+        <div class="featured-video">
+            <div class="video-caption">📹 System Demonstration & Features</div>
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/p3OcnVIPMIM?si=nyqAvigYo7Tw7xl-" 
+                    title="IproK System Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
         <div class="featured-links">
-            <a href="https://github.com/konevenkatesh/Semantic-BIM-Workflow" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                View on GitHub
+            <a href="https://w3id.org/iprok/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                View Ontology
+            </a>
+            <a href="https://iprok-web.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                Live WebApp
             </a>
             <a href="https://doi.org/10.1080/15623599.2025.2562105" target="_blank" rel="noopener" class="btn btn-secondary">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -739,6 +824,20 @@ order: 4
                             <span class="impact-value">100%</span>
                             <span class="impact-label">IFC Coverage</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Video Demo -->
+                <div class="project-video">
+                    <div class="video-caption">📹 ChatGraphDB Demo & Query Examples</div>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/8WEuozXKnEg?si=V82lMCrMi7Z5H7gL" 
+                            title="ChatGraphDB Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
@@ -880,6 +979,20 @@ order: 4
                     </ul>
                 </div>
 
+                <!-- Video Demo -->
+                <div class="project-video">
+                    <div class="video-caption">📹 Multimodal RAG System Walkthrough</div>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Wv66eZFJ42E?si=ScU-hNUQvN_OV4_S" 
+                            title="Multimodal RAG Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
                 <div class="project-tech">
                     <span class="tech-tag">Docling</span>
                     <span class="tech-tag">LangGraph</span>
@@ -889,9 +1002,13 @@ order: 4
                 </div>
 
                 <div class="project-links">
-                    <a href="https://github.com/konevenkatesh/Contract-Query-Agent" target="_blank" rel="noopener" class="project-link">
+                    <a href="https://github.com/konevenkatesh/tender_rag_project" target="_blank" rel="noopener" class="project-link">
                         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                         GitHub Repository
+                    </a>
+                    <a href="https://konevenkatesh.github.io/blog/ai-in-construction.html" target="_blank" rel="noopener" class="project-link">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                        Read Blog Post
                     </a>
                 </div>
             </div>
