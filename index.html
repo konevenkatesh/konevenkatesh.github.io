@@ -96,16 +96,30 @@ title: Home
 
 
 <script>
-    // Dynamically add Download CV button to the sidebar profile wrapper
+    // Dynamically add Download CV button to the sidebar
     document.addEventListener('DOMContentLoaded', function () {
-        var profileWrapper = document.querySelector('#sidebar .profile-wrapper');
-        if (profileWrapper) {
-            var cvBtn = document.createElement('a');
-            cvBtn.href = 'src/venkateshkone_cv.pdf';
-            cvBtn.className = 'sidebar-cv-btn';
-            cvBtn.target = '_blank';
-            cvBtn.innerHTML = '<i class="fas fa-download me-2"></i>Download CV';
-            profileWrapper.appendChild(cvBtn);
-        }
+        // Wait for sidebar to fully load
+        setTimeout(function() {
+            // Try multiple selectors for better compatibility
+            var profileWrapper = document.querySelector('#sidebar .profile-wrapper') || 
+                                document.querySelector('.sidebar-bottom') ||
+                                document.querySelector('#sidebar .site-subtitle')?.parentElement;
+            
+            if (profileWrapper) {
+                // Prevent duplicate buttons
+                if (!document.querySelector('.sidebar-cv-btn')) {
+                    var cvBtn = document.createElement('a');
+                    // Correct Jekyll path
+                    cvBtn.href = '{{ site.baseurl }}/assets/cv/venkateshkone_cv.pdf';
+                    cvBtn.className = 'sidebar-cv-btn';
+                    cvBtn.target = '_blank';
+                    cvBtn.rel = 'noopener noreferrer';
+                    cvBtn.innerHTML = '<i class="fas fa-download"></i>Download CV';
+                    profileWrapper.appendChild(cvBtn);
+                }
+            } else {
+                console.warn('Sidebar profile wrapper not found');
+            }
+        }, 500); // Wait 500ms for DOM to be ready
     });
 </script>
