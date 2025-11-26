@@ -1,15 +1,10 @@
 ---
-layout: default
-title: Home
+layout: page
+icon: fas fa-rss
+order: 3
 ---
 
 <style>
-    .section-title {
-        margin: 2rem 0 1.5rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
     .blog-card {
         background: var(--card-bg);
         border: 1px solid var(--border-color);
@@ -49,32 +44,10 @@ title: Home
         line-height: 1.6;
         font-size: 0.95rem;
     }
-
-    /* Sidebar CV Button Styles */
-    .sidebar-cv-btn {
-        display: block;
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background-color: var(--link-color);
-        color: #fff !important;
-        text-align: center;
-        border-radius: 50px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: opacity 0.2s;
-    }
-
-    .sidebar-cv-btn:hover {
-        opacity: 0.9;
-        text-decoration: none;
-    }
 </style>
 
-<div id="latest-blog">
-    <h2 class="section-title">Latest Writing</h2>
-
-    <a href="blog/ai-in-construction.html" class="blog-card">
+<div id="blog-list">
+    <a href="/blog/ai-in-construction.html" class="blog-card">
         <div class="blog-meta">December 2024 &bull; Technical Deep Dive</div>
         <h3 class="blog-title">AI and Construction Data: Bridging Complexity Through Intelligent Document Systems</h3>
         <p class="blog-excerpt">
@@ -83,7 +56,7 @@ title: Home
         </p>
     </a>
 
-    {% for post in site.posts limit:3 %}
+    {% for post in site.posts %}
     <a href="{{ post.url | relative_url }}" class="blog-card">
         <div class="blog-meta">{{ post.date | date: "%B %Y" }} &bull; {{ post.categories | join: ", " }}</div>
         <h3 class="blog-title">{{ post.title }}</h3>
@@ -93,19 +66,3 @@ title: Home
     </a>
     {% endfor %}
 </div>
-
-
-<script>
-    // Dynamically add Download CV button to the sidebar profile wrapper
-    document.addEventListener('DOMContentLoaded', function () {
-        var profileWrapper = document.querySelector('#sidebar .profile-wrapper');
-        if (profileWrapper) {
-            var cvBtn = document.createElement('a');
-            cvBtn.href = 'src/venkateshkone_cv.pdf';
-            cvBtn.className = 'sidebar-cv-btn';
-            cvBtn.target = '_blank';
-            cvBtn.innerHTML = '<i class="fas fa-download me-2"></i>Download CV';
-            profileWrapper.appendChild(cvBtn);
-        }
-    });
-</script>

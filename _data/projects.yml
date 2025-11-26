@@ -1,0 +1,11 @@
+- name: Project 1 Name
+  description: Description of the project. What tech stack was used? What problem did it solve?
+  url: "#"
+  image: ""
+  featured: true
+
+- name: Project 2 Name
+  description: Description of the project.
+  url: "#"
+  image: ""
+  featured: true
