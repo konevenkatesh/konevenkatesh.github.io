@@ -86,6 +86,26 @@ order: 2
         border-bottom-color: var(--accent);
     }
 
+    .container .cv-button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.4rem 0.8rem;
+        background: var(--accent);
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .container .cv-button:hover {
+        background: #1e3a8a;
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+
     /* Typography */
     .container h2 {
         font-size: 1.75rem;
@@ -455,6 +475,11 @@ order: 2
             <a href="https://github.com/konevenkatesh" target="_blank" class="contact-link">GitHub</a>
             <a href="https://www.linkedin.com/in/venkatesh-kone-66149a13b/" target="_blank" class="contact-link">LinkedIn</a>
             <a href="https://scholar.google.com/citations?user=0aKzihMAAAAJ&hl=en" target="_blank" class="contact-link">Google Scholar</a>
+        </div>
+        <div style="margin-top: 0.5rem;">
+            <a href="/assets/cv/venkateshkone_cv.pdf" target="_blank" class="cv-button">
+                <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download CV
+            </a>
         </div>
     </div>
 
