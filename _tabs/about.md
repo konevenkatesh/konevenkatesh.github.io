@@ -551,10 +551,17 @@ order: 2
 
             <div class="publication">
                 <p class="pub-authors"><strong>Kone, V.</strong> & Mahesh, G.</p>
+                <p class="pub-title">An Ontology-Driven Bi-Directional Workflow for Integrating Project Management Data into The IFC Standard.</p>
+                <p class="pub-venue">Journal of Information Technology in Construction, 2025</p>
+                <p class="pub-venue">Accepted for publication</p>
+            </div>
+
+            <div class="publication">
+                <p class="pub-authors"><strong>Kone, V.</strong> & Mahesh, G.</p>
                 <p class="pub-title">Ontology-Driven Project Management: A Framework for Structured Data and Automation</p>
                 <p class="pub-venue">Proceedings of Digital Frontiers in Buildings and Infrastructure International Conference Series, 2025, 77-88</p>
                 <div class="pub-links">
-                    <a href="https://dfbi.org" target="_blank" class="pub-link">Conference Link</a>
+                    <a href="https://submission.dfbi.org/index.php/dfbi/article/view/2549" target="_blank" class="pub-link">Conference Link</a>
                 </div>
             </div>
 
