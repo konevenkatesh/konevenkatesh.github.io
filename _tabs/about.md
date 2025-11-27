@@ -675,7 +675,13 @@ order: 2
             <div class="cert-item">
                 <h4>IBM RAG and Agentic AI: Build Next-Gen AI Systems Professional Certificate</h4>
                 <p class="cert-meta">Issued by: IBM (via Coursera)
-                    <a href="https://coursera.org/verify/D0ZQYBXRL87Z" target="_blank" class="cert-link">Verify →</a>
+                    <a href="https://coursera.org/verify/professional-cert/GGXH2B9LNRYL" target="_blank" class="cert-link">Verify →</a>
+                </p>
+            </div>
+            <div class="cert-item">
+                <h4> Building AI Agents and Agentic Workflows Specialization Certificate</h4>
+                <p class="cert-meta">Issued by: IBM (via Coursera)
+                    <a href="https://coursera.org/verify/specialization/6N17YPAB1KO2" target="_blank" class="cert-link">Verify →</a>
                 </p>
             </div>
 
