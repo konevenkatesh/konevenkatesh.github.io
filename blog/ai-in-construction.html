@@ -369,6 +369,25 @@
       text-decoration: underline;
     }
 
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+      margin-top: 0.8rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     @media (max-width:980px) {
 
       .lead,
@@ -572,6 +591,21 @@
           <h3>5.2 System Architecture</h3>
           <pre><code>INPUT → Docling (parse + OCR) → Structural chunking → Embeddings → ChromaDB 
 → Hybrid retrieval (vector + BM25) → LLM (OpenAI / Ollama) → Answer+citations → UI</code></pre>
+          
+          <div class="card" style="margin-top:1rem">
+            <h4>See the System in Action</h4>
+            <p style="margin-bottom:0.8rem">Watch a live demonstration of the tender analysis system processing real documents and answering queries:</p>
+            <div class="video-container">
+              <iframe 
+                src="https://www.youtube.com/embed/Wv66eZFJ42E" 
+                title="Tender RAG System Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
           <h3>5.3 Technical Implementation Details</h3>
           <h4>5.3.1 Document Processing: Docling Integration</h4>
           <p>Docling preserves structure, handles OCR, and exports to markdown — useful for LLMs. On sample tenders it
